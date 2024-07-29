@@ -1,18 +1,20 @@
 from random import randint
 from art import logo
 
-attempts = 0
 number = randint(1, 100)
 
 print(logo)
 
-answer = input("Do you want the easy or hard level: ")
 
-if answer == 'easy':
-    attempts = 10
-elif answer == 'hard':
-    attempts = 5
+def set_difficulty():
+    answer = input("Do you want the easy or hard level: ")
+    if answer == 'easy':
+        return 10
+    else:
+        return 5
 
+attempts = set_difficulty()
+print(attempts)
 print("I'm thinking of a number between 1 and 100")
 
 while attempts > 0:
